@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "385838827301",
+    "project_id": "sih1310-1ad20",
+    "storage_bucket": "sih1310-1ad20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:385838827301:android:bf46b281208531f712fccc",
+        "android_client_info": {
+          "package_name": "com.example.sih_ecopreneurs"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCY7NmvUAtf8MlBAQmk2Fjl66qrkRp1sa4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
