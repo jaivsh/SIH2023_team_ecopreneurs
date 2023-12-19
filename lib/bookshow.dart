@@ -8,7 +8,8 @@ import 'package:sih_ecopreneurs/payaddress.dart';
 class BookShow extends StatefulWidget {
   final String name;
   final String price;
-  const BookShow({super.key, required this.name, required this.price});
+  final String crossprice;
+  const BookShow({super.key, required this.name, required this.price, required this.crossprice});
 
   @override
   State<BookShow> createState() => _BookShowState();
@@ -42,7 +43,7 @@ class _BookShowState extends State<BookShow> {
             initialPage: 0,
             enableInfiniteScroll: true,
             reverse: true,
-            autoPlay: true,
+            autoPlay: false,
             autoPlayInterval: Duration(seconds: 3),
             autoPlayAnimationDuration: Duration(milliseconds: 800),
             autoPlayCurve: Curves.fastOutSlowIn,
@@ -51,7 +52,7 @@ class _BookShowState extends State<BookShow> {
 
             scrollDirection: Axis.horizontal,
           ),
-          items: [1,2,3,4,5].map((i) {
+          items: [1].map((i) {
             return Builder(
               builder: (BuildContext context) {
                 return Container(
@@ -105,7 +106,7 @@ class _BookShowState extends State<BookShow> {
                   ),
                 ),
                 TextSpan(
-                  text: widget.price,
+                  text: widget.crossprice,
                   style: TextStyle(
                     color: Color(0xFF474747),
                     decoration: TextDecoration.lineThrough,
@@ -125,7 +126,7 @@ class _BookShowState extends State<BookShow> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Quantity: $counter', textAlign: TextAlign.center,style: TextStyle(
+                Text('Quantity: ${counter+1}', textAlign: TextAlign.center,style: TextStyle(
                   color: Colors.red,
                   fontSize: 16,
                   fontFamily: 'SF UI Display',

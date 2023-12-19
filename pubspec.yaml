@@ -41,6 +41,9 @@ dependencies:
   toggle_switch: ^2.1.0
   flutter_credit_card: ^4.0.1
   firebase_core:
+  gsheets:
+  http:
+
 
 dev_dependencies:
   flutter_test:

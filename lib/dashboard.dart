@@ -23,15 +23,23 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
     'https://htmlcolorcodes.com/assets/images/colors/white-color-solid-background-1920x1080.png',
     'https://htmlcolorcodes.com/assets/images/colors/white-color-solid-background-1920x1080.png',
   ];
-  List<String> name1 = ['Art & Culture', 'Modern India', 'Children\'s Literature', 'Works of M.K. Gandhi', 'Freedom Struggle'];
-  List<String> name2 = ['Indian Leaders','Flora & Fauna', 'Gandhian Literature', 'Health & Nutrition', 'Biography'];
+  List<String> name1 = ['Art & Culture', 'Modern \nIndia', 'Children\'s\n Literature', 'M.K. Gandhi', 'Freedom Struggle'];
+  List<String> name2 = ['Indian\nLeaders','Flora &\nFauna', 'Gandhian\nLiterature', 'Health &\nNutrition', 'Biography'];
+  final List<String> carouselimage = ['assets/images/car1.jpg',
+  'assets/images/car2.jpg','assets/images/car3.jpg'];
+
   final List<String> imageUrls1 = [
     'https://example.com/image1.jpg',
     'https://example.com/image2.jpg',
     'https://example.com/image3.jpg',
     'https://example.com/image4.jpg',
   ];
-
+  final List<String> aimg2 = ['assets/images/indlead.png',
+    'assets/images/envmnt.png','assets/images/gandhi.png',
+    'assets/images/health.png','assets/images/biography.png'];
+  final List<String> aimg1 = ['assets/images/painting.png',
+    'assets/images/modernindia.png','assets/images/childlit.png',
+    'assets/images/mkg.png','assets/images/freedomstr.png'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -127,7 +135,7 @@ SizedBox(height:20),
 
           scrollDirection: Axis.horizontal,
         ),
-          items: [1,2,3,4,5].map((i) {
+          items: carouselimage.map((i) {
             return Builder(
               builder: (BuildContext context) {
                 return Container(
@@ -135,9 +143,13 @@ SizedBox(height:20),
                     margin: EdgeInsets.symmetric(horizontal: 5.0),
                     decoration: BoxDecoration(
                         color: Colors.white,
+                        image: DecorationImage(
+                          image: AssetImage('$i'), // Replace with your actual image asset path
+                          fit: BoxFit.cover,
+                        ),
                         borderRadius: BorderRadius.all(Radius.circular(20))
                     ),
-                    child: Center(child:Text('$i', style: TextStyle(fontSize: 16.0),))
+                    child: Text('')
                 );
               },
             );
@@ -156,7 +168,7 @@ SizedBox(height:20),
         ),
         SizedBox(height:10),
     Container(
-    height: 100.0, // Adjust the height as needed
+    height: 140.0, // Adjust the height as needed
     child: ListView.builder(
     scrollDirection: Axis.horizontal,
     itemCount: imageUrls.length,
@@ -172,10 +184,27 @@ SizedBox(height:20),
       GestureDetector(onTap: () {
         Navigator.of(context).push(MaterialPageRoute(builder: (context) => SectionScreen(name: name1[index])));
 
-      },child:CircleAvatar(
-        radius: 40.0, // Adjust the radius as needed
-        backgroundImage: NetworkImage(imageUrls[index]),
-        child: Text(name1[index],textAlign: TextAlign.center, style: TextStyle(color: Colors.black))
+      },child:Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CircleAvatar(
+              radius: 40,
+              backgroundColor: Colors.white,
+              backgroundImage: AssetImage('${aimg1[index]}'), // Replace with your image asset path
+            ),
+            SizedBox(height: 2), // Adjust spacing between CircleAvatar and text
+            Text(
+              '${name1[index]}',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+            ),
+          ],
+        ),
       ),)
 
     ])
@@ -184,8 +213,9 @@ SizedBox(height:20),
     },
     ),
     ),
+        SizedBox(height:30),
         Container(
-          height: 100.0, // Adjust the height as needed
+          height: 150.0, // Adjust the height as needed
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: imageUrls.length,
@@ -197,57 +227,35 @@ SizedBox(height:20),
                     // Handle the click event for the image at index
                     print('Image clicked: $index');
                   },
-                  child: CircleAvatar(
-                    radius: 40.0, // Adjust the radius as needed
-                    backgroundImage: NetworkImage(imageUrls[index]),
-                    child: Text(name2[index],textAlign: TextAlign.center, style: TextStyle(color: Colors.black))
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CircleAvatar(
+                          radius: 40,
+                          backgroundColor: Colors.white,
+                          backgroundImage: AssetImage('${aimg2[index]}'), // Replace with your image asset path
+                        ),
+                        SizedBox(height: 2), // Adjust spacing between CircleAvatar and text
+                        Text(
+                          '${name2[index]}',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
+
               );
             },
           ),
         ),
-        SizedBox(height:15),
-        Text(
-          'Top Bestsellers',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 15,
-            fontFamily: 'SF UI Display',
-            fontWeight: FontWeight.w600,
-            height: 0,
-          ),
-        ),
-        SizedBox(height:10),
-          Container(
-            height: 100.0, // Adjust the height as needed
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: imageUrls.length,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: GestureDetector(
-                    onTap: () {
-                      // Handle the click event for the image at index
-                      print('Image clicked: $index');
-                    },
-                    child: Container(
-                      width: 80.0, // Adjust the width as needed
-                      height: 80.0, // Adjust the height as needed
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10.0), // Adjust the radius as needed
-                        image: DecorationImage(
-                          image: NetworkImage(imageUrls[index]),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                  ),
-                );
-              },
-            ),
-          )
+
       ]
       ) )
     );

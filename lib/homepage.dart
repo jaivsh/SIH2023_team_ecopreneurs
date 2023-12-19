@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'dart:convert';
 import 'package:sih_ecopreneurs/dashboard.dart';
 import 'package:sih_ecopreneurs/creatorscreen.dart';
 import 'package:sih_ecopreneurs/premuim.dart';
 import 'package:sih_ecopreneurs/subscriptions.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+import 'package:http/http.dart' as http;
 
 class HomepageScreen extends StatefulWidget {
   const HomepageScreen({super.key});
@@ -15,6 +17,13 @@ class HomepageScreen extends StatefulWidget {
 }
 
 class _HomepageScreenState extends State<HomepageScreen> {
+
+
+  @override
+  void initState() {
+    super.initState();
+
+  }
   PersistentTabController _controller = PersistentTabController(initialIndex: 0);
   List<Widget> _buildScreens() {
     return [

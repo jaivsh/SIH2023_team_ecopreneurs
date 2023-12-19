@@ -3,6 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:sih_ecopreneurs/listscreen.dart';
 import 'package:sih_ecopreneurs/bookshow.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
 
 
 class SectionScreen extends StatefulWidget {
@@ -14,6 +17,7 @@ class SectionScreen extends StatefulWidget {
 }
 
 class _SectionScreenState extends State<SectionScreen> {
+
   final TextEditingController _searchController = TextEditingController();
   final List<String> imageUrls = [
     'https://htmlcolorcodes.com/assets/images/colors/white-color-solid-background-1920x1080.png',
@@ -29,6 +33,12 @@ class _SectionScreenState extends State<SectionScreen> {
     'https://example.com/image3.jpg',
     'https://example.com/image4.jpg',
   ];
+  final List<String> aimg2 = ['assets/images/indlead.png',
+    'assets/images/flaura.png','assets/images/gandhi.png',
+    'assets/images/health.png','assets/images/biography.png'];
+  final List<String> aimg1 = ['assets/images/artandculture.png',
+  'assets/images/modernindia.png','assets/images/childlit.png',
+  'assets/images/mkg.png','assets/images/freedomstr.png'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -182,13 +192,11 @@ class _SectionScreenState extends State<SectionScreen> {
                     },
                     child: Container(
                       width: 80.0, // Adjust the width as needed
-                      height: 80.0, // Adjust the height as needed
+                      height: 80.0,
                       decoration: BoxDecoration(
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(10.0), // Adjust the radius as needed
-                        image: DecorationImage(
-                          image: NetworkImage(imageUrls[index]),
-                          fit: BoxFit.cover,
-                        ),
+
                       ),
                     ),
                   ),
@@ -236,11 +244,9 @@ class _SectionScreenState extends State<SectionScreen> {
                       width: 80.0, // Adjust the width as needed
                       height: 80.0, // Adjust the height as needed
                       decoration: BoxDecoration(
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(10.0), // Adjust the radius as needed
-                        image: DecorationImage(
-                          image: NetworkImage(imageUrls[index]),
-                          fit: BoxFit.cover,
-                        ),
+
                       ),
                     ),
                   ),
