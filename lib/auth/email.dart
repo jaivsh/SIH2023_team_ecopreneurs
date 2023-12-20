@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sih_ecopreneurs/onboarding/languagescreen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:async';
+import 'package:intl/intl.dart';
 
 
 class EmailScreen extends StatefulWidget {
@@ -12,6 +15,19 @@ class EmailScreen extends StatefulWidget {
 
 class _EmailScreenState extends State<EmailScreen> {
   TextEditingController _emailController = TextEditingController();
+
+  Future<void> _incrementCounter(String email) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('counter', '10');
+    DateTime now = DateTime.now();
+    String formattedTime = DateFormat('HH:mm:ss').format(now);
+    int curtime = DateTime.now().millisecondsSinceEpoch;
+    await prefs.setString('email', email);
+    await prefs.setString('sessionhash', formattedTime);
+    await prefs.setInt('milli', curtime);
+
+
+  }
 
   void validateEmailAddress() {
     // Get the input value
@@ -27,6 +43,7 @@ class _EmailScreenState extends State<EmailScreen> {
       List<String> k = widget.data;
       k = k + [emailAddress];
       print(k);
+      _incrementCounter(emailAddress);
       Navigator.of(context).push(MaterialPageRoute(builder: (context) => LanguageScreen(data: k)));
     } else {
       showDialog(
@@ -39,6 +56,12 @@ class _EmailScreenState extends State<EmailScreen> {
         },
       );
     }
+  }
+
+  @override
+  initstate() {
+    super.initState();
+
   }
   @override
   Widget build(BuildContext context) {
@@ -107,7 +130,6 @@ class _EmailAddressFormState extends State<EmailAddressForm> {
     // Get the input value
     String emailAddress = _emailController.text.trim();
 
-    // Regular expression for a valid email address
     RegExp regex = RegExp(
       r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
     );

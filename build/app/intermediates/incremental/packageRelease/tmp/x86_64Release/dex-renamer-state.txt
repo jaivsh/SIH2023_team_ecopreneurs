@@ -1,4 +1,4 @@
-#Wed Dec 20 09:51:30 IST 2023
+#Wed Dec 20 17:37:26 IST 2023
 base.0=/Users/jaivardhanshukla/AndroidStudioProjects/sih_ecopreneurs/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

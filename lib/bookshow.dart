@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:sih_ecopreneurs/payaddress.dart';
+import 'package:sih_ecopreneurs/persona2.dart';
+import 'package:sih_ecopreneurs/trackingController.dart';
 
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 class BookShow extends StatefulWidget {
@@ -23,6 +26,50 @@ class _BookShowState extends State<BookShow> {
       counter++;
     });
   }
+  void submitstuff(List<String> k) async {
+    TrackingPersona persona = TrackingPersona(
+      k[0],
+      k[1],
+      k[4],
+      k[2],
+      k[3],
+
+    );
+
+    TrackingController controller = TrackingController((String response) {
+      print(response);
+
+    });
+
+    controller.submitForm(persona);
+  }
+
+  Future<void> getdata() async {
+    int curt = DateTime.now().millisecondsSinceEpoch;
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    int oldtime = await prefs.getInt('milli')!;
+    int actualtime = curt - oldtime;
+    String email = await prefs.getString('email')!;
+    String session = await prefs.getString('sessionhash')!;
+    String bookname = widget.name;
+    List<String> k = [email, session, actualtime.toString(), bookname, ''];
+    TrackingPersona persona = TrackingPersona(
+      k[0],
+      k[1],
+      k[4],
+      k[2],
+      k[3],
+
+    );
+
+    TrackingController controller = TrackingController((String response) {
+      print(response);
+
+    });
+
+    controller.submitForm(persona);
+
+  }
 
   void decrementCounter() {
     if (counter > 0) {
@@ -30,6 +77,12 @@ class _BookShowState extends State<BookShow> {
         counter--;
       });
     }
+  }
+
+  @override
+  initState() {
+    super.initState();
+    getdata();
   }
 
   @override

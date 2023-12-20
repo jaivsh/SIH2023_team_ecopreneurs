@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sih_ecopreneurs/onboarding/regional.dart';
+import 'package:sih_ecopreneurs/onboarding/agescreen.dart';
+
 
 
 class LanguageScreen extends StatefulWidget {
@@ -53,7 +55,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                 cb4 = s!;
               });
               if(cb4) {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => RegionalScreen(data: widget.data)));
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => AgeScreen(data: widget.data)));
               }
             }),
             SizedBox(width:20),
@@ -73,7 +75,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                 cb3 = s!;
               });
               if(cb3) {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => RegionalScreen(data: widget.data)));
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => AgeScreen(data: widget.data)));
 
               }
             }),
@@ -96,7 +98,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                 cb2 = s!;
               });
               if(cb2) {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => RegionalScreen(data: widget.data)));
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => AgeScreen(data: widget.data)));
 
               }
             }),

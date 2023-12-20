@@ -23,13 +23,14 @@ class FavouriteScreen extends StatefulWidget {
 
 class _FavouriteScreenState extends State<FavouriteScreen> {
 
-  void submitstuff() async {
+  void submitstuff(List<String> k) async {
       UserPersona persona = UserPersona(
-        widget.data[0],
-        widget.data[1],
-        '18-25 years',
-        'Roller coster',
-        'history'
+        k[0],
+        k[1],
+        k[4],
+        k[2],
+        k[3],
+
       );
 
       PersonaController controller = PersonaController((String response) {
@@ -42,19 +43,14 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
 
   @override
   initState() {
-   submitstuff();
+
   }
 
-  List<String> interests = [];
+  String interests = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(backgroundColor: Colors.red,child: Icon(Icons.forward, color: Colors.black),onPressed: () async {
-        List<String> k = widget.data;
-        k= k + interests;
-        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomepageScreen()));
-      }),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+
       body: Container(padding:EdgeInsets.all(15),color: Color(0xfffeebdc), width: MediaQuery.of(context).size.width,
       child: Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start, children:[
         SizedBox(height: 30),
@@ -66,8 +62,8 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
           height: 0.08,
           letterSpacing: 0.75,
         ),), onPressed: () {
-          //yha par bhejo
-          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => DashBoardScreen()));
+
+          //Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => DashBoardScreen()));
         }),
         SizedBox(height: 30),
         Text(
@@ -98,9 +94,12 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
 
           Flexible(child:Container(height: 50,child:GestureDetector(onTap: () async{
 
-            //Navigator.of(context).push(MaterialPageRoute(builder: (context) => Immersive()));
           },child:GestureDetector(onTap: () {
-            interests.add('History');
+            interests= 'History';
+            List<String> k = widget.data;
+            k = k + [interests];
+            submitstuff(k);
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomepageScreen()));
           },child:Card(
               elevation:7,
               shape: RoundedRectangleBorder(
@@ -124,7 +123,11 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                 ],
               ),))))),),
           Flexible(child:Container(height: 50,child:GestureDetector(onTap: () {
-            interests = interests + ['Autobiography'];
+            interests= 'Autobiography';
+            List<String> k = widget.data;
+            k = k + [interests];
+            submitstuff(k);
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomepageScreen()));
             // Navigator.of(context).push(MaterialPageRoute(builder: (context) => Interactive()));
           },child:Card(
               elevation:7,
@@ -151,7 +154,11 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,crossAxisAlignment: CrossAxisAlignment.center,children: [
 
           Flexible(child:Container(height: 50,child:GestureDetector(onTap: () async{
-            interests = interests + ['Photography'];
+            interests= 'Photography';
+            List<String> k = widget.data;
+            k = k + [interests];
+            submitstuff(k);
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomepageScreen()));
 
             //Navigator.of(context).push(MaterialPageRoute(builder: (context) => Immersive()));
           },child:Card(
@@ -177,7 +184,11 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                 ],
               ),))))),
           Flexible(child:Container(height: 50,child:GestureDetector(onTap: () {
-            interests = interests + ['Sports'];
+            interests= 'Sports';
+            List<String> k = widget.data;
+            k = k + [interests];
+            submitstuff(k);
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomepageScreen()));
 
             // Navigator.of(context).push(MaterialPageRoute(builder: (context) => Interactive()));
           },child:Card(
@@ -205,7 +216,11 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,crossAxisAlignment: CrossAxisAlignment.center,children: [
 
           Flexible(child:Container(height: 50,child:GestureDetector(onTap: () async{
-            interests = interests + ['Novel'];
+            interests= 'Novel';
+            List<String> k = widget.data;
+            k = k + [interests];
+            submitstuff(k);
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomepageScreen()));
 
             //Navigator.of(context).push(MaterialPageRoute(builder: (context) => Immersive()));
           },child:Card(
@@ -231,8 +246,11 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                 ],
               ),))))),
           Flexible(child:Container(height: 50,child:GestureDetector(onTap: () {
-            interests = interests + ['Language and Literature'];
-            // Navigator.of(context).push(MaterialPageRoute(builder: (context) => Interactive()));
+            interests= 'Language and Literature';
+            List<String> k = widget.data;
+            k = k + [interests];
+            submitstuff(k);
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomepageScreen()));            // Navigator.of(context).push(MaterialPageRoute(builder: (context) => Interactive()));
           },child:Card(
               elevation:7,
               shape: RoundedRectangleBorder(
@@ -258,7 +276,11 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,crossAxisAlignment: CrossAxisAlignment.center,children: [
 
           Flexible(child:Container(height: 50,child:GestureDetector(onTap: () async{
-            interests = interests + ['Art and Culture'];
+            interests= 'Art and Culture';
+            List<String> k = widget.data;
+            k = k + [interests];
+            submitstuff(k);
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomepageScreen()));
 
             //Navigator.of(context).push(MaterialPageRoute(builder: (context) => Immersive()));
           },child:Card(
@@ -284,8 +306,11 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                 ],
               ),))))),
           Flexible(child:Container(height: 50,child:GestureDetector(onTap: () {
-            interests = interests + ['Architecture'];
-
+            interests= 'Architecture';
+            List<String> k = widget.data;
+            k = k + [interests];
+            submitstuff(k);
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomepageScreen()));
             // Navigator.of(context).push(MaterialPageRoute(builder: (context) => Interactive()));
           },child:Card(
               elevation:7,
@@ -312,7 +337,11 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,crossAxisAlignment: CrossAxisAlignment.center,children: [
 
           Flexible(child:Container(height: 50,child:GestureDetector(onTap: () async{
-
+            interests= 'Childern\'s Literature';
+            List<String> k = widget.data;
+            k = k + [interests];
+            submitstuff(k);
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomepageScreen()));
             //Navigator.of(context).push(MaterialPageRoute(builder: (context) => Immersive()));
           },child:Card(
               elevation:7,
@@ -337,7 +366,11 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                 ],
               ),))))),
           Flexible(child:Container(height: 50,child:GestureDetector(onTap: () {
-            // Navigator.of(context).push(MaterialPageRoute(builder: (context) => Interactive()));
+            interests= 'Media and Communication';
+            List<String> k = widget.data;
+            k = k + [interests];
+            submitstuff(k);
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomepageScreen()));
           },child:Card(
               elevation:7,
               shape: RoundedRectangleBorder(
@@ -363,7 +396,11 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,crossAxisAlignment: CrossAxisAlignment.center,children: [
 
           Flexible(child:Container(height: 50,child:GestureDetector(onTap: () async{
-
+            interests= 'Health and Nutrition';
+            List<String> k = widget.data;
+            k = k + [interests];
+            submitstuff(k);
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomepageScreen()));
             //Navigator.of(context).push(MaterialPageRoute(builder: (context) => Immersive()));
           },child:Card(
               elevation:7,
@@ -388,7 +425,11 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                 ],
               ),))))),
           Flexible(child:Container(height: 50,child:GestureDetector(onTap: () {
-            // Navigator.of(context).push(MaterialPageRoute(builder: (context) => Interactive()));
+            interests= 'Science';
+            List<String> k = widget.data;
+            k = k + [interests];
+            submitstuff(k);
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomepageScreen()));
           },child:Card(
               elevation:7,
               shape: RoundedRectangleBorder(
@@ -416,7 +457,11 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
 
           Flexible(child:Container(height: 50,child:GestureDetector(onTap: () async{
 
-            //Navigator.of(context).push(MaterialPageRoute(builder: (context) => Immersive()));
+            interests= 'Speeches';
+            List<String> k = widget.data;
+            k = k + [interests];
+            submitstuff(k);
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomepageScreen()));
           },child:Card(
               elevation:7,
               shape: RoundedRectangleBorder(
@@ -440,7 +485,11 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                 ],
               ),))))),
           Flexible(child:Container(height: 50,child:GestureDetector(onTap: () {
-            // Navigator.of(context).push(MaterialPageRoute(builder: (context) => Interactive()));
+            interests= 'Mahatma Gandhi';
+            List<String> k = widget.data;
+            k = k + [interests];
+            submitstuff(k);
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomepageScreen()));
           },child:Card(
               elevation:7,
               shape: RoundedRectangleBorder(
@@ -467,7 +516,11 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,crossAxisAlignment: CrossAxisAlignment.center,children: [
 
           Flexible(child:Container(height: 50,child:GestureDetector(onTap: () async{
-
+            interests= 'Ecofriendly';
+            List<String> k = widget.data;
+            k = k + [interests];
+            submitstuff(k);
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomepageScreen()));
             //Navigator.of(context).push(MaterialPageRoute(builder: (context) => Immersive()));
           },child:Card(
               elevation:7,
@@ -492,7 +545,12 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                 ],
               ),))))),
           Flexible(child:Container(height: 50,child:GestureDetector(onTap: () {
-            // Navigator.of(context).push(MaterialPageRoute(builder: (context) => Interactive()));
+
+            interests= 'Wildlife';
+            List<String> k = widget.data;
+            k = k + [interests];
+            submitstuff(k);
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomepageScreen()));// Navigator.of(context).push(MaterialPageRoute(builder: (context) => Interactive()));
           },child:Card(
               elevation:7,
               shape: RoundedRectangleBorder(

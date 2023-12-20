@@ -8,7 +8,7 @@ class PersonaController {
   final void Function(String) callback;
 
   // Google App Script Web URL
-  static const String URL = "https://script.google.com/macros/s/AKfycbz0xXfyjbxCvo1fwQzVt2Z41T1xcCk-srreXHrsXL5PMJjGw_MoWsMQDl6ym4-JMRL1/exec";
+  static const String URL = "https://script.google.com/macros/s/AKfycbwEvtigWLscorG6g6L-Vhz_ZHjCadq4IcboN8gHaWA3m2VSyD1oO1Fvawkr4F7WF7POzA/exec";
 
   static const STATUS_SUCCESS = "SUCCESS";
 

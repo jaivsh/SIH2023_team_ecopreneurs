@@ -43,7 +43,8 @@ dependencies:
   firebase_core:
   gsheets:
   http:
-
+  shared_preferences:
+  intl: ^0.19.0
 
 dev_dependencies:
   flutter_test:

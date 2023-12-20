@@ -58,6 +58,7 @@ class _AgeScreenState extends State<AgeScreen> {
                       children:[
                         Row(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,children:[
                           SizedBox(width:20), Checkbox(activeColor: Colors.red,value:cb1,onChanged:(s) {
+                            actval = 'B18';
                             List<String> k = widget.data;
                             k = k + [actval];
                             setState(() {
@@ -69,7 +70,6 @@ class _AgeScreenState extends State<AgeScreen> {
                                 MaterialPageRoute(builder: (context) => StreamScreen(data: k)),
                               );
                             }
-                            actval = 'Below 18';
                           }),
                           SizedBox(width:20),
                           Text(
@@ -86,6 +86,7 @@ class _AgeScreenState extends State<AgeScreen> {
 
                         Row(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,children:[
                           SizedBox(width:20), Checkbox(activeColor: Colors.red,value:cb1,onChanged:(s) {
+                            actval = 'B25';
                             List<String> k = widget.data;
                             k = k + [actval];
                             setState(() {
@@ -97,7 +98,6 @@ class _AgeScreenState extends State<AgeScreen> {
                                 MaterialPageRoute(builder: (context) => StreamScreen(data: k)),
                               );
                             }
-                            actval = '18-25';
 
                           }),
                           SizedBox(width:20),
@@ -114,6 +114,7 @@ class _AgeScreenState extends State<AgeScreen> {
                         ]),
                         Row(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,children:[
                           SizedBox(width:20), Checkbox(activeColor: Colors.red,value:cb1,onChanged:(s) {
+                            actval = 'B40';
                             List<String> k = widget.data;
                             k = k + [actval];
                             setState(() {
@@ -125,7 +126,6 @@ class _AgeScreenState extends State<AgeScreen> {
                                 MaterialPageRoute(builder: (context) => StreamScreen(data: k)),
                               );
                             }
-                            actval = '25-40';
 
                           }),
                           SizedBox(width:20),
@@ -142,6 +142,7 @@ class _AgeScreenState extends State<AgeScreen> {
                         ]),
                         Row(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,children:[
                           SizedBox(width:20), Checkbox(activeColor: Colors.red,value:cb1,onChanged:(s) {
+                            actval = 'B55';
                             List<String> k = widget.data;
                             k = k + [actval];
                             setState(() {
@@ -153,12 +154,12 @@ class _AgeScreenState extends State<AgeScreen> {
                                 MaterialPageRoute(builder: (context) => StreamScreen(data: k)),
                               );
                             }
-                            actval = '40-55';
+
 
                           }),
                           SizedBox(width:20),
                           Text(
-                            '40 - 55 years',
+                            'B55',
                             style: TextStyle(
                               color: Color(0xFF111111),
                               fontSize: 20,
@@ -170,12 +171,14 @@ class _AgeScreenState extends State<AgeScreen> {
                         ]),
                         Row(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,children:[
                           SizedBox(width:20), Checkbox(activeColor: Colors.red,value:cb1,onChanged:(s) {
+                            actval = 'A55';
                             List<String> k = widget.data;
                             k = k + [actval];
 
                             setState(() {
                               cb5 = s!;
                             });
+
 
                             if(cb5) {
                               Navigator.pushReplacement(
