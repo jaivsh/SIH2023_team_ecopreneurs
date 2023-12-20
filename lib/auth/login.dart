@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sih_ecopreneurs/onboarding/languagescreen.dart';
 import 'package:sih_ecopreneurs/auth/phonescreen.dart';
+import 'package:sih_ecopreneurs/homepage.dart';
 
 
 class LoginScreen extends StatefulWidget {
@@ -52,7 +53,9 @@ class _LoginScreenState extends State<LoginScreen> {
             textAlign: TextAlign.center,
           ),
         ),
-        Center(child:TextButton(onPressed:() {},child: Text('Login',style:TextStyle(
+        Center(child:TextButton(onPressed:() {
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomepageScreen()));
+        },child: Text('Login',style:TextStyle(
           color: Color(0xFFFF1E00),
           fontSize: 15,
           fontFamily: 'SF UI Display',

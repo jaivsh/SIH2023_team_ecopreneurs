@@ -3,7 +3,8 @@ import 'package:sih_ecopreneurs/onboarding/regional.dart';
 
 
 class LanguageScreen extends StatefulWidget {
-  const LanguageScreen({super.key});
+  final List<String> data;
+  const LanguageScreen({super.key, required this.data});
 
   @override
   State<LanguageScreen> createState() => _LanguageScreenState();
@@ -49,8 +50,11 @@ class _LanguageScreenState extends State<LanguageScreen> {
           Row(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,children:[
             SizedBox(width:20), Checkbox(activeColor: Colors.red,value:cb1,onChanged:(s) {
               setState(() {
-                cb1 = s!;
+                cb4 = s!;
               });
+              if(cb4) {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => RegionalScreen(data: widget.data)));
+              }
             }),
             SizedBox(width:20),
             Text('English',textAlign: TextAlign.center, style:TextStyle(
@@ -66,8 +70,12 @@ class _LanguageScreenState extends State<LanguageScreen> {
           Row(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,children:[
             SizedBox(width:20), Checkbox(activeColor: Colors.red,value:cb1,onChanged:(s) {
               setState(() {
-                cb1 = s!;
+                cb3 = s!;
               });
+              if(cb3) {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => RegionalScreen(data: widget.data)));
+
+              }
             }),
             SizedBox(width:20),
             Text(
@@ -85,8 +93,12 @@ class _LanguageScreenState extends State<LanguageScreen> {
           Row(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,children:[
             SizedBox(width:20), Checkbox(activeColor: Colors.red,value:cb1,onChanged:(s) {
               setState(() {
-                cb1 = s!;
+                cb2 = s!;
               });
+              if(cb2) {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => RegionalScreen(data: widget.data)));
+
+              }
             }),
             SizedBox(width:20),
             Text(
@@ -107,7 +119,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                 cb1 = s!;
               });
               if(cb1) {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => RegionalScreen()));
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => RegionalScreen(data: widget.data)));
               }
             }),
             SizedBox(width:20),

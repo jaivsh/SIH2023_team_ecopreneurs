@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:sih_ecopreneurs/homepage.dart';
+import 'package:sih_ecopreneurs/onboarding/favourites.dart';
+
 
 class StreamScreen extends StatefulWidget {
-  const StreamScreen({super.key});
+  final List<String> data;
+  const StreamScreen({super.key, required this.data});
 
   @override
   State<StreamScreen> createState() => _StreamScreenState();
@@ -13,6 +16,8 @@ class _StreamScreenState extends State<StreamScreen> {
   bool cb2 = false;
   bool cb3 = false;
   bool cb4 = false;
+  bool cb5 = false;
+  String thisval = '';
   void _showInputDialog(BuildContext context) {
     showDialog(
       context: context,
@@ -27,6 +32,7 @@ class _StreamScreenState extends State<StreamScreen> {
           actions: [
             TextButton(
               onPressed: () {
+
                 Navigator.of(context).pop(); // Close the dialog
               },
               child: Text('Cancel', style:TextStyle(color: Colors.red)),
@@ -34,12 +40,13 @@ class _StreamScreenState extends State<StreamScreen> {
             ElevatedButton(
               style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
               onPressed: () {
-
+                List<String> val = widget.data;
+                val = val + [thisval];
                 // Handle the data from the text field
                 // For example, you can print the entered text
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => HomepageScreen()),
+                  MaterialPageRoute(builder: (context) => FavouriteScreen(data:val)),
                 );// Close the dialog
               },
               child: Text('OK'),
@@ -91,9 +98,21 @@ class _StreamScreenState extends State<StreamScreen> {
                       children:[
                         Row(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,children:[
                           SizedBox(width:20), Checkbox(activeColor: Colors.red,value:cb1,onChanged:(s) {
+
                             setState(() {
-                              cb1 = s!;
+                              cb2 = s!;
                             });
+                            thisval = 'Education';
+                            if(cb2) {
+                              List<String> val = widget.data;
+                              val = val + [thisval];
+                              // Handle the data from the text field
+                              // For example, you can print the entered text
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => FavouriteScreen(data:val)),
+                              );// Close
+                            }
                           }),
                           SizedBox(width:20),
                           Text(
@@ -111,8 +130,20 @@ class _StreamScreenState extends State<StreamScreen> {
                         Row(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,children:[
                           SizedBox(width:20), Checkbox(activeColor: Colors.red,value:cb1,onChanged:(s) {
                             setState(() {
-                              cb1 = s!;
+                              cb3 = s!;
                             });
+                            thisval = 'Healthcare';
+                            if(cb3) {
+                              List<String> val = widget.data;
+                              val = val + [thisval];
+                              // Handle the data from the text field
+                              // For example, you can print the entered text
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => FavouriteScreen(data:val)),
+                              );// Close
+                            }
+
                           }),
                           SizedBox(width:20),
                           Text(
@@ -129,8 +160,20 @@ class _StreamScreenState extends State<StreamScreen> {
                         Row(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,children:[
                           SizedBox(width:20), Checkbox(activeColor: Colors.red,value:cb1,onChanged:(s) {
                             setState(() {
-                              cb1 = s!;
+                              cb4 = s!;
                             });
+                            thisval = 'Industry';
+                            if(cb4) {
+                              List<String> val = widget.data;
+                              val = val + [thisval];
+                              // Handle the data from the text field
+                              // For example, you can print the entered text
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => FavouriteScreen(data:val)),
+                              );// Close
+                            }
+
                           }),
                           SizedBox(width:20),
                           Text(
@@ -147,8 +190,19 @@ class _StreamScreenState extends State<StreamScreen> {
                         Row(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,children:[
                           SizedBox(width:20), Checkbox(activeColor: Colors.red,value:cb1,onChanged:(s) {
                             setState(() {
-                              cb1 = s!;
+                              cb5 = s!;
                             });
+                            thisval = 'Financing and Accounting';
+                            if(cb5) {
+                              List<String> val = widget.data;
+                              val = val + [thisval];
+                              // Handle the data from the text field
+                              // For example, you can print the entered text
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => FavouriteScreen(data:val)),
+                              );// Close
+                            }
                           }),
                           SizedBox(width:20),
                           Text(
@@ -164,6 +218,7 @@ class _StreamScreenState extends State<StreamScreen> {
                         ]),
                         Row(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,children:[
                           SizedBox(width:20), Checkbox(activeColor: Colors.red,value:cb1,onChanged:(s) {
+                            thisval = 'Others';
                             _showInputDialog(context);
                           }),
                           SizedBox(width:20),

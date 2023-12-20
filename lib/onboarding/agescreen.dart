@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sih_ecopreneurs/onboarding/streamscreen.dart';
 
 class AgeScreen extends StatefulWidget {
-  const AgeScreen({super.key});
+  final List<String> data;
+  const AgeScreen({super.key, required this.data});
 
   @override
   State<AgeScreen> createState() => _AgeScreenState();
@@ -13,6 +14,8 @@ class _AgeScreenState extends State<AgeScreen> {
   bool cb2 = false;
   bool cb3 = false;
   bool cb4 = false;
+  bool cb5 = false;
+  String actval = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(body:
@@ -55,9 +58,18 @@ class _AgeScreenState extends State<AgeScreen> {
                       children:[
                         Row(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,children:[
                           SizedBox(width:20), Checkbox(activeColor: Colors.red,value:cb1,onChanged:(s) {
+                            List<String> k = widget.data;
+                            k = k + [actval];
                             setState(() {
                               cb1 = s!;
                             });
+                            if(cb1) {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(builder: (context) => StreamScreen(data: k)),
+                              );
+                            }
+                            actval = 'Below 18';
                           }),
                           SizedBox(width:20),
                           Text(
@@ -74,9 +86,19 @@ class _AgeScreenState extends State<AgeScreen> {
 
                         Row(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,children:[
                           SizedBox(width:20), Checkbox(activeColor: Colors.red,value:cb1,onChanged:(s) {
+                            List<String> k = widget.data;
+                            k = k + [actval];
                             setState(() {
-                              cb1 = s!;
+                              cb2= s!;
                             });
+                            if(cb2) {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(builder: (context) => StreamScreen(data: k)),
+                              );
+                            }
+                            actval = '18-25';
+
                           }),
                           SizedBox(width:20),
                           Text(
@@ -92,9 +114,19 @@ class _AgeScreenState extends State<AgeScreen> {
                         ]),
                         Row(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,children:[
                           SizedBox(width:20), Checkbox(activeColor: Colors.red,value:cb1,onChanged:(s) {
+                            List<String> k = widget.data;
+                            k = k + [actval];
                             setState(() {
-                              cb1 = s!;
+                              cb3 = s!;
                             });
+                            if(cb3) {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(builder: (context) => StreamScreen(data: k)),
+                              );
+                            }
+                            actval = '25-40';
+
                           }),
                           SizedBox(width:20),
                           Text(
@@ -110,9 +142,19 @@ class _AgeScreenState extends State<AgeScreen> {
                         ]),
                         Row(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,children:[
                           SizedBox(width:20), Checkbox(activeColor: Colors.red,value:cb1,onChanged:(s) {
+                            List<String> k = widget.data;
+                            k = k + [actval];
                             setState(() {
-                              cb1 = s!;
+                              cb4 = s!;
                             });
+                            if(cb4) {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(builder: (context) => StreamScreen(data: k)),
+                              );
+                            }
+                            actval = '40-55';
+
                           }),
                           SizedBox(width:20),
                           Text(
@@ -128,15 +170,18 @@ class _AgeScreenState extends State<AgeScreen> {
                         ]),
                         Row(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,children:[
                           SizedBox(width:20), Checkbox(activeColor: Colors.red,value:cb1,onChanged:(s) {
-                            Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(builder: (context) => StreamScreen()),
-                            );
-                            setState(() {
-                              cb1 = s!;
-                            });
-                            if(cb1) {
+                            List<String> k = widget.data;
+                            k = k + [actval];
 
+                            setState(() {
+                              cb5 = s!;
+                            });
+
+                            if(cb5) {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(builder: (context) => StreamScreen(data: k)),
+                              );
                             }
                           }),
                           SizedBox(width:20),

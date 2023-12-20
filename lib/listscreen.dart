@@ -101,7 +101,7 @@ Future<List<Book>> fetchBooks() async {
                   height: 200.0, // Adjust the height of the image
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage('https://drive.google.com/file/d/11Ky6K_fEo0xNeSpRo6bhFhbTT5Je7nXk/view?usp=sharing',), // Replace with your image URL
+                      image: AssetImage('assets/images/buk.png'), // Replace with your image URL
                       fit: BoxFit.cover,
 
                     ),
@@ -165,13 +165,9 @@ class ProductCard extends StatelessWidget {
       child: Column(
         children: [
           Container(
+
             height: 200.0, // Adjust the height of the image
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/Notebook.png'), // Replace with your image URL
-                fit: BoxFit.cover,
-              ),
-            ),
+
           ),
           SizedBox(height: 8.0),
           Padding(

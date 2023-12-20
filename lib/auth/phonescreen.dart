@@ -59,7 +59,7 @@ class _PhoneNumberFormState extends State<PhoneNumberForm> {
 
     // Check if the phone number matches the pattern
     if (regex.hasMatch(phoneNumber)) {
-      Navigator.of(context).push(MaterialPageRoute(builder: (context) => EmailScreen()));
+      Navigator.of(context).push(MaterialPageRoute(builder: (context) => EmailScreen(data: [phoneNumber.toString()])));
     } else {
       showDialog(
         context: context,

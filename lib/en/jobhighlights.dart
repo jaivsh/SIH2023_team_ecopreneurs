@@ -97,6 +97,13 @@ class _VerticalScrollViewWithCardsState
                   borderRadius: BorderRadius.circular(15.0),
                 ),
                 child: Container(
+                  decoration: BoxDecoration(
+                    // Set the background image
+                    image: DecorationImage(
+                      image: AssetImage('assets/images/oknews.png'), // Replace with your image path
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                   width: double.infinity,
                   height: 130.0,
                   padding: EdgeInsets.all(10.0),
@@ -107,7 +114,7 @@ class _VerticalScrollViewWithCardsState
                       Text(
                         'News',
                         style: TextStyle(
-                          color: Colors.black,
+                          color: Colors.white,
                           fontSize: 11,
                           fontFamily: 'SF UI Display',
                           fontWeight: FontWeight.w400,
@@ -118,7 +125,7 @@ class _VerticalScrollViewWithCardsState
                       Text(
                         'Title of news is written here',
                         style: TextStyle(
-                          color: Colors.black,
+                          color: Colors.white,
                           fontSize: 20,
                           fontFamily: 'SF UI Display',
                           fontWeight: FontWeight.w600,
@@ -129,7 +136,7 @@ class _VerticalScrollViewWithCardsState
                       Text(
                         '16 Nov 2023 . 10 min read',
                         style: TextStyle(
-                          color: Colors.black,
+                          color: Colors.white,
                           fontSize: 11,
                           fontFamily: 'SF UI Display',
                           fontWeight: FontWeight.w400,
@@ -169,7 +176,7 @@ class _LikeButtonState extends State<LikeButton> {
     return IconButton(
       icon: Icon(
         isLiked ? Icons.favorite : Icons.favorite_border,
-        color: isLiked ? Colors.red : null,
+        color: isLiked ? Colors.red : Colors.white,
       ),
       onPressed: () {
         setState(() {

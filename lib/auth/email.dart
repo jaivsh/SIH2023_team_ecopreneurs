@@ -3,13 +3,43 @@ import 'package:sih_ecopreneurs/onboarding/languagescreen.dart';
 
 
 class EmailScreen extends StatefulWidget {
-  const EmailScreen({super.key});
+  final List<String> data;
+  const EmailScreen({super.key, required this.data});
 
   @override
   State<EmailScreen> createState() => _EmailScreenState();
 }
 
 class _EmailScreenState extends State<EmailScreen> {
+  TextEditingController _emailController = TextEditingController();
+
+  void validateEmailAddress() {
+    // Get the input value
+    String emailAddress = _emailController.text.trim();
+
+    // Regular expression for a valid email address
+    RegExp regex = RegExp(
+      r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+    );
+
+    // Check if the email address matches the pattern
+    if (regex.hasMatch(emailAddress)) {
+      List<String> k = widget.data;
+      k = k + [emailAddress];
+      print(k);
+      Navigator.of(context).push(MaterialPageRoute(builder: (context) => LanguageScreen(data: k)));
+    } else {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Invalid email address'),
+            content: Text('Please enter a valid email address.'),
+          );
+        },
+      );
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +66,31 @@ class _EmailScreenState extends State<EmailScreen> {
               height: 0,
             ),
           ),
-          EmailAddressForm(),
+         Padding(
+            padding: const EdgeInsets.all(16.0),
+      child: Column(
+        children: [
+          // Label for the email address
+          Text('Email Address:'),
+
+          // Input field for the email address
+          TextField(
+            controller: _emailController,
+            decoration: InputDecoration(
+              hintText: 'example@example.com',
+            ),
+          ),
+
+          // Button to trigger the validation
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+
+            onPressed: validateEmailAddress,
+            child: Text('Move Ahead'),
+          ),
+        ],
+      ),
+    )
         ]))
     );
 }}
@@ -59,9 +113,7 @@ class _EmailAddressFormState extends State<EmailAddressForm> {
     );
 
     // Check if the email address matches the pattern
-    if (regex.hasMatch(emailAddress)) {
-      Navigator.of(context).push(MaterialPageRoute(builder: (context) => LanguageScreen()));
-    } else {
+    if (regex.hasMatch(emailAddress)) {} else {
       showDialog(
         context: context,
         builder: (context) {

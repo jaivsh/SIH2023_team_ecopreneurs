@@ -6,7 +6,8 @@ import 'package:sih_ecopreneurs/onboarding/agescreen.dart';
 
 
 class RegionalScreen extends StatefulWidget {
-  const RegionalScreen({super.key});
+  final List<String> data;
+  const RegionalScreen({super.key, required this.data});
 
   @override
   State<RegionalScreen> createState() => _RegionalScreenState();
@@ -17,6 +18,7 @@ class _RegionalScreenState extends State<RegionalScreen> {
   bool cb2 = false;
   bool cb3 = false;
   bool cb4 = false;
+  bool cb5 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +55,10 @@ class _RegionalScreenState extends State<RegionalScreen> {
                             setState(() {
                               cb1 = s!;
                             });
+                            if(cb1) {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => AgeScreen(data:widget.data)));
+                            }
+
                           }),
                           SizedBox(width:20),
                           Text(
@@ -71,8 +77,11 @@ class _RegionalScreenState extends State<RegionalScreen> {
                         Row(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,children:[
                           SizedBox(width:20), Checkbox(activeColor: Colors.red,value:cb1,onChanged:(s) {
                             setState(() {
-                              cb1 = s!;
+                              cb2 = s!;
                             });
+                            if(cb2) {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => AgeScreen(data:widget.data)));
+                            }
                           }),
                           SizedBox(width:20),
                           Text(
@@ -90,8 +99,12 @@ class _RegionalScreenState extends State<RegionalScreen> {
                         Row(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,children:[
                           SizedBox(width:20), Checkbox(activeColor: Colors.red,value:cb1,onChanged:(s) {
                             setState(() {
-                              cb1 = s!;
+                              cb3 = s!;
                             });
+                            if(cb3) {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => AgeScreen(data:widget.data)));
+                            }
+
                           }),
                           SizedBox(width:20),
                           Text(
@@ -109,8 +122,11 @@ class _RegionalScreenState extends State<RegionalScreen> {
                         Row(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,children:[
                           SizedBox(width:20), Checkbox(activeColor: Colors.red,value:cb1,onChanged:(s) {
                             setState(() {
-                              cb1 = s!;
+                              cb4 = s!;
                             });
+                          if(cb4) {
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => AgeScreen(data:widget.data)));
+                          }
                           }),
                           SizedBox(width:20),
                           Text(
@@ -128,10 +144,10 @@ class _RegionalScreenState extends State<RegionalScreen> {
                         Row(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,children:[
                           SizedBox(width:20), Checkbox(activeColor: Colors.red,value:cb1,onChanged:(s) {
                             setState(() {
-                              cb1 = s!;
+                              cb5 = s!;
                             });
-                            if(cb1) {
-                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => AgeScreen()));
+                            if(cb5) {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => AgeScreen(data:widget.data)));
                             }
                           }),
                           SizedBox(width:20),

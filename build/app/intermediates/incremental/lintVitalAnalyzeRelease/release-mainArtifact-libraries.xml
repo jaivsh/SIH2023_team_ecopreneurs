@@ -17,6 +17,19 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="/Users/jaivardhanshukla/AndroidStudioProjects/sih_ecopreneurs/android@@:firebase_core::release"
+      jars="/Users/jaivardhanshukla/AndroidStudioProjects/sih_ecopreneurs/build/firebase_core/.transforms/4732137b90a234b06758d742e4cf9378/transformed/out/jars/classes.jar:/Users/jaivardhanshukla/AndroidStudioProjects/sih_ecopreneurs/build/firebase_core/.transforms/4732137b90a234b06758d742e4cf9378/transformed/out/jars/libs/R.jar"
+      resolved="io.flutter.plugins.firebase.core:firebase_core:unspecified"
+      folder="/Users/jaivardhanshukla/AndroidStudioProjects/sih_ecopreneurs/build/firebase_core/.transforms/4732137b90a234b06758d742e4cf9378/transformed/out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="/Users/jaivardhanshukla/AndroidStudioProjects/sih_ecopreneurs/android@@:flutter_credit_card::release"
       jars="/Users/jaivardhanshukla/AndroidStudioProjects/sih_ecopreneurs/build/flutter_credit_card/.transforms/b148253e5a6a7fa5365d5fc6e5bd1324/transformed/out/jars/classes.jar:/Users/jaivardhanshukla/AndroidStudioProjects/sih_ecopreneurs/build/flutter_credit_card/.transforms/b148253e5a6a7fa5365d5fc6e5bd1324/transformed/out/jars/libs/R.jar"
       resolved="com.simform.flutter_credit_card:flutter_credit_card:unspecified"
@@ -60,13 +73,13 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2@jar"
-      jars="/Users/jaivardhanshukla/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-android/1.5.2/d246a704a55b7bddb79407cce4348890eaa341d9/kotlinx-coroutines-android-1.5.2.jar"
-      resolved="org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2"/>
+      name="org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4@jar"
+      jars="/Users/jaivardhanshukla/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-android/1.6.4/f955fc8b2ad196e2f4429598440e15f7492eeb2b/kotlinx-coroutines-android-1.6.4.jar"
+      resolved="org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"/>
   <library
-      name="org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.5.2@jar"
-      jars="/Users/jaivardhanshukla/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm/1.5.2/f4cc07a50437659e0043e7da762809a46932b6a0/kotlinx-coroutines-core-jvm-1.5.2.jar"
-      resolved="org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.5.2"/>
+      name="org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.4@jar"
+      jars="/Users/jaivardhanshukla/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm/1.6.4/2c997cd1c0ef33f3e751d3831929aeff1390cb30/kotlinx-coroutines-core-jvm-1.6.4.jar"
+      resolved="org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.4"/>
   <library
       name="org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10@jar"
       jars="/Users/jaivardhanshukla/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk8/1.7.10/d70d7d2c56371f7aa18f32e984e3e2e998fe9081/kotlin-stdlib-jdk8-1.7.10.jar"
@@ -269,9 +282,25 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="androidx.annotation:annotation:1.2.0@jar"
-      jars="/Users/jaivardhanshukla/.gradle/caches/modules-2/files-2.1/androidx.annotation/annotation/1.2.0/57136ff68ee784c6e19db34ed4a175338fadfde1/annotation-1.2.0.jar"
-      resolved="androidx.annotation:annotation:1.2.0"/>
+      name="androidx.annotation:annotation-jvm:1.7.0@jar"
+      jars="/Users/jaivardhanshukla/.gradle/caches/modules-2/files-2.1/androidx.annotation/annotation-jvm/1.7.0/920472d40adcdef5e18708976b3e314f9a636fcd/annotation-jvm-1.7.0.jar"
+      resolved="androidx.annotation:annotation-jvm:1.7.0"/>
+  <library
+      name="org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.10@jar"
+      jars="/Users/jaivardhanshukla/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/1.7.10/1ef73fee66f45d52c67e2aca12fd945dbe0659bf/kotlin-stdlib-jdk7-1.7.10.jar"
+      resolved="org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.10"/>
+  <library
+      name="org.jetbrains.kotlin:kotlin-stdlib:1.7.10@jar"
+      jars="/Users/jaivardhanshukla/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.7.10/d2abf9e77736acc4450dc4a3f707fa2c10f5099d/kotlin-stdlib-1.7.10.jar"
+      resolved="org.jetbrains.kotlin:kotlin-stdlib:1.7.10"/>
+  <library
+      name="org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10@jar"
+      jars="/Users/jaivardhanshukla/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.7.10/bac80c520d0a9e3f3673bc2658c6ed02ef45a76a/kotlin-stdlib-common-1.7.10.jar"
+      resolved="org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10"/>
+  <library
+      name="org.jetbrains:annotations:13.0@jar"
+      jars="/Users/jaivardhanshukla/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar"
+      resolved="org.jetbrains:annotations:13.0"/>
   <library
       name="androidx.annotation:annotation-experimental:1.1.0@aar"
       jars="/Users/jaivardhanshukla/.gradle/caches/transforms-3/6c0c163cc77ae6c91f9f7dfcd179c29c/transformed/jetified-annotation-experimental-1.1.0/jars/classes.jar"
@@ -299,19 +328,79 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.10@jar"
-      jars="/Users/jaivardhanshukla/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/1.7.10/1ef73fee66f45d52c67e2aca12fd945dbe0659bf/kotlin-stdlib-jdk7-1.7.10.jar"
-      resolved="org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.10"/>
+      name="com.google.firebase:firebase-common:20.4.2@aar"
+      jars="/Users/jaivardhanshukla/.gradle/caches/transforms-3/e7d9dc77e05549f012842a2b34d6bb45/transformed/jetified-firebase-common-20.4.2/jars/classes.jar"
+      resolved="com.google.firebase:firebase-common:20.4.2"
+      folder="/Users/jaivardhanshukla/.gradle/caches/transforms-3/e7d9dc77e05549f012842a2b34d6bb45/transformed/jetified-firebase-common-20.4.2"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
   <library
-      name="org.jetbrains.kotlin:kotlin-stdlib:1.7.10@jar"
-      jars="/Users/jaivardhanshukla/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.7.10/d2abf9e77736acc4450dc4a3f707fa2c10f5099d/kotlin-stdlib-1.7.10.jar"
-      resolved="org.jetbrains.kotlin:kotlin-stdlib:1.7.10"/>
+      name="org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4@jar"
+      jars="/Users/jaivardhanshukla/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-play-services/1.6.4/e8e5e0dbe20eadc35a0eb112bcc1b2089768c906/kotlinx-coroutines-play-services-1.6.4.jar"
+      resolved="org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4"/>
   <library
-      name="org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10@jar"
-      jars="/Users/jaivardhanshukla/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.7.10/bac80c520d0a9e3f3673bc2658c6ed02ef45a76a/kotlin-stdlib-common-1.7.10.jar"
-      resolved="org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10"/>
+      name="com.google.android.gms:play-services-tasks:18.0.2@aar"
+      jars="/Users/jaivardhanshukla/.gradle/caches/transforms-3/ce5c58c6e35047e3d15f8e30a3aa7219/transformed/jetified-play-services-tasks-18.0.2/jars/classes.jar"
+      resolved="com.google.android.gms:play-services-tasks:18.0.2"
+      folder="/Users/jaivardhanshukla/.gradle/caches/transforms-3/ce5c58c6e35047e3d15f8e30a3aa7219/transformed/jetified-play-services-tasks-18.0.2"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
   <library
-      name="org.jetbrains:annotations:13.0@jar"
-      jars="/Users/jaivardhanshukla/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar"
-      resolved="org.jetbrains:annotations:13.0"/>
+      name="com.google.android.gms:play-services-basement:18.1.0@aar"
+      jars="/Users/jaivardhanshukla/.gradle/caches/transforms-3/58aa1384bde170d075503b845cfcf44c/transformed/jetified-play-services-basement-18.1.0/jars/classes.jar"
+      resolved="com.google.android.gms:play-services-basement:18.1.0"
+      folder="/Users/jaivardhanshukla/.gradle/caches/transforms-3/58aa1384bde170d075503b845cfcf44c/transformed/jetified-play-services-basement-18.1.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="com.google.firebase:firebase-components:17.1.5@aar"
+      jars="/Users/jaivardhanshukla/.gradle/caches/transforms-3/5dc18843449206e2e601d1da8625c09b/transformed/jetified-firebase-components-17.1.5/jars/classes.jar"
+      resolved="com.google.firebase:firebase-components:17.1.5"
+      folder="/Users/jaivardhanshukla/.gradle/caches/transforms-3/5dc18843449206e2e601d1da8625c09b/transformed/jetified-firebase-components-17.1.5"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.concurrent:concurrent-futures:1.1.0@jar"
+      jars="/Users/jaivardhanshukla/.gradle/caches/modules-2/files-2.1/androidx.concurrent/concurrent-futures/1.1.0/50b7fb98350d5f42a4e49704b03278542293ba48/concurrent-futures-1.1.0.jar"
+      resolved="androidx.concurrent:concurrent-futures:1.1.0"/>
+  <library
+      name="com.google.firebase:firebase-annotations:16.2.0@jar"
+      jars="/Users/jaivardhanshukla/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-annotations/16.2.0/ba0806703ca285d03fa9c888b5868f101134a501/firebase-annotations-16.2.0.jar"
+      resolved="com.google.firebase:firebase-annotations:16.2.0"/>
+  <library
+      name="com.google.errorprone:error_prone_annotations:2.9.0@jar"
+      jars="/Users/jaivardhanshukla/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.9.0/74fe3b8b4f3fc84dc940d0ca4c4b270dbc902764/error_prone_annotations-2.9.0.jar"
+      resolved="com.google.errorprone:error_prone_annotations:2.9.0"/>
+  <library
+      name="javax.inject:javax.inject:1@jar"
+      jars="/Users/jaivardhanshukla/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+      resolved="javax.inject:javax.inject:1"/>
+  <library
+      name="com.google.guava:listenablefuture:1.0@jar"
+      jars="/Users/jaivardhanshukla/.gradle/caches/modules-2/files-2.1/com.google.guava/listenablefuture/1.0/c949a840a6acbc5268d088e47b04177bf90b3cad/listenablefuture-1.0.jar"
+      resolved="com.google.guava:listenablefuture:1.0"/>
 </libraries>

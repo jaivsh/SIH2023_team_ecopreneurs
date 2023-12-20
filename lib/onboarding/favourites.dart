@@ -1,21 +1,58 @@
 import 'package:flutter/material.dart';
 import 'package:sih_ecopreneurs/dashboard.dart';
 import 'package:sih_ecopreneurs/homepage.dart';
+import 'package:sih_ecopreneurs/persona1.dart';
+import 'package:sih_ecopreneurs/personaController.dart';
+import 'package:gsheets/gsheets.dart';
+
+
+/// Your spreadsheet id
+///
+/// It can be found in the link to your spreadsheet -
+/// link looks like so https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID/edit#gid=0
+/// [YOUR_SPREADSHEET_ID] in the path is the id your need
 
 
 class FavouriteScreen extends StatefulWidget {
-  const FavouriteScreen({super.key});
+  final List<String> data;
+  const FavouriteScreen({super.key, required this.data});
 
   @override
   State<FavouriteScreen> createState() => _FavouriteScreenState();
 }
 
 class _FavouriteScreenState extends State<FavouriteScreen> {
+
+  void submitstuff() async {
+      UserPersona persona = UserPersona(
+        widget.data[0],
+        widget.data[1],
+        '18-25 years',
+        'Roller coster',
+        'history'
+      );
+
+      PersonaController controller = PersonaController((String response) {
+        print(response);
+
+      });
+
+      controller.submitForm(persona);
+  }
+
+  @override
+  initState() {
+   submitstuff();
+  }
+
+  List<String> interests = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(backgroundColor: Colors.red,child: Icon(Icons.forward, color: Colors.black),onPressed: () {
-        Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomepageScreen()));
+      floatingActionButton: FloatingActionButton(backgroundColor: Colors.red,child: Icon(Icons.forward, color: Colors.black),onPressed: () async {
+        List<String> k = widget.data;
+        k= k + interests;
+        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomepageScreen()));
       }),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: Container(padding:EdgeInsets.all(15),color: Color(0xfffeebdc), width: MediaQuery.of(context).size.width,
@@ -29,7 +66,8 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
           height: 0.08,
           letterSpacing: 0.75,
         ),), onPressed: () {
-          Navigator.of(context).push(MaterialPageRoute(builder: (context) => DashBoardScreen()));
+          //yha par bhejo
+          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => DashBoardScreen()));
         }),
         SizedBox(height: 30),
         Text(
@@ -61,6 +99,8 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
           Flexible(child:Container(height: 50,child:GestureDetector(onTap: () async{
 
             //Navigator.of(context).push(MaterialPageRoute(builder: (context) => Immersive()));
+          },child:GestureDetector(onTap: () {
+            interests.add('History');
           },child:Card(
               elevation:7,
               shape: RoundedRectangleBorder(
@@ -82,8 +122,9 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
 
 
                 ],
-              ),))))),
+              ),))))),),
           Flexible(child:Container(height: 50,child:GestureDetector(onTap: () {
+            interests = interests + ['Autobiography'];
             // Navigator.of(context).push(MaterialPageRoute(builder: (context) => Interactive()));
           },child:Card(
               elevation:7,
@@ -105,11 +146,12 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                   ),
 
                 ],
-              ),)))),),
+              ),)))),)
         ],),
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,crossAxisAlignment: CrossAxisAlignment.center,children: [
 
           Flexible(child:Container(height: 50,child:GestureDetector(onTap: () async{
+            interests = interests + ['Photography'];
 
             //Navigator.of(context).push(MaterialPageRoute(builder: (context) => Immersive()));
           },child:Card(
@@ -135,6 +177,8 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                 ],
               ),))))),
           Flexible(child:Container(height: 50,child:GestureDetector(onTap: () {
+            interests = interests + ['Sports'];
+
             // Navigator.of(context).push(MaterialPageRoute(builder: (context) => Interactive()));
           },child:Card(
               elevation:7,
@@ -161,6 +205,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,crossAxisAlignment: CrossAxisAlignment.center,children: [
 
           Flexible(child:Container(height: 50,child:GestureDetector(onTap: () async{
+            interests = interests + ['Novel'];
 
             //Navigator.of(context).push(MaterialPageRoute(builder: (context) => Immersive()));
           },child:Card(
@@ -186,6 +231,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                 ],
               ),))))),
           Flexible(child:Container(height: 50,child:GestureDetector(onTap: () {
+            interests = interests + ['Language and Literature'];
             // Navigator.of(context).push(MaterialPageRoute(builder: (context) => Interactive()));
           },child:Card(
               elevation:7,
@@ -212,6 +258,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,crossAxisAlignment: CrossAxisAlignment.center,children: [
 
           Flexible(child:Container(height: 50,child:GestureDetector(onTap: () async{
+            interests = interests + ['Art and Culture'];
 
             //Navigator.of(context).push(MaterialPageRoute(builder: (context) => Immersive()));
           },child:Card(
@@ -237,6 +284,8 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                 ],
               ),))))),
           Flexible(child:Container(height: 50,child:GestureDetector(onTap: () {
+            interests = interests + ['Architecture'];
+
             // Navigator.of(context).push(MaterialPageRoute(builder: (context) => Interactive()));
           },child:Card(
               elevation:7,

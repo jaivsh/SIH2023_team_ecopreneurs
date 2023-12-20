@@ -52,7 +52,7 @@ class _BookShowState extends State<BookShow> {
 
             scrollDirection: Axis.horizontal,
           ),
-          items: [1].map((i) {
+          items: ['assets/images/buk.png'].map((i) {
             return Builder(
               builder: (BuildContext context) {
                 return Container(
@@ -62,7 +62,7 @@ class _BookShowState extends State<BookShow> {
                         color: Colors.white,
                         borderRadius: BorderRadius.all(Radius.circular(0))
                     ),
-                    child: Center(child:Text('$i', style: TextStyle(fontSize: 16.0),))
+                    child: Image.asset('$i'),
                 );
               },
             );
@@ -75,7 +75,7 @@ class _BookShowState extends State<BookShow> {
             widget.name.toUpperCase(),
             style: TextStyle(
               color: Colors.black,
-              fontSize: 24,
+              fontSize: 18,
               fontFamily: 'SF UI Display',
               fontWeight: FontWeight.w600,
               height: 0.04,

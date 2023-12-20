@@ -29,7 +29,13 @@ class _JobPostENState extends State<JobPostEN> {
         }).toList();
       },
     ),], ),
-    body: Container(padding: EdgeInsets.all(15),width: MediaQuery.of(context).size.width, color: Color(0xfffeebdc),child: Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,children: [
+    body: Container(decoration: BoxDecoration(
+      // Set the background image
+      image: DecorationImage(
+        image: AssetImage('assets/images/oknews.png'), // Replace with your image path
+        fit: BoxFit.cover,
+      ),
+    ),padding: EdgeInsets.all(15),width: MediaQuery.of(context).size.width, color: Color(0xfffeebdc),child: Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,children: [
       Container(
 
         width: MediaQuery.of(context).size.width,
