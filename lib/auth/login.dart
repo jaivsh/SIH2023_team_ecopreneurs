@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sih_ecopreneurs/onboarding/languagescreen.dart';
+import 'package:sih_ecopreneurs/auth/phonescreen.dart';
+
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -21,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
         Padding(padding:EdgeInsets.only(top:100, left:50, right:50),child: Container(width: MediaQuery.of(context).size.width,child:ElevatedButton(style: ElevatedButton.styleFrom(shape: RoundedRectangleBorder(
     borderRadius: BorderRadius.circular(40), // <-- Radius
     ),backgroundColor: Colors.black),onPressed:() {
-          Navigator.of(context).push(MaterialPageRoute(builder: (context) => LanguageScreen()));
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => PhoneScreen()));
 
         }, child: Text('SignUp', style:TextStyle(color:Colors.red))))),
         SizedBox(height:17),
